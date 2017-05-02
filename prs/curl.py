@@ -14,9 +14,10 @@ body = buffer.getvalue()
 # Body is a byte string.
 # We have to know the encoding in order to print it to a text file
 # such as standard output.
-#print(body);
-temp = etree.fromstring(body)
-etree.tostring(temp)
-nodes = etree.parse('//h2')
-print(len(nodes));
+
+tree = tree = etree.HTML( body.decode('utf-8') )
+nodes = tree.xpath('//h2')
+print('найдно h2: ',  len(nodes));
+for node in nodes:
+    print(node.text)
 #print()
