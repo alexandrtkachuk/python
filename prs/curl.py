@@ -15,7 +15,7 @@ body = buffer.getvalue()
 # We have to know the encoding in order to print it to a text file
 # such as standard output.
 
-tree = tree = etree.HTML( body.decode('utf-8') )
+tree = etree.HTML( body.decode('utf-8') )
 nodes = tree.xpath('//h2')
 print('найдно h2: ',  len(nodes));
 for node in nodes:
